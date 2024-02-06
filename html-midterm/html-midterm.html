@@ -63,6 +63,33 @@
         <dt>Descriptive Item Title</dt>
         <dd>Descriptive Item Text</dd>
     </dl>
+
+
+    <br><br>
+    <p><b>ERRORS FOUND AND FIXED</b></p>
+    <ol>
+        <li>Missing <!DOCTYPE html>. Added to top of page.</li>
+        <li>html language="en" on line 5 does not belong in head tag. Put this tag on line 3.</li>
+        <li>html tag from errror 1 has "language" when it should be "lang". changed it to lang.</li>
+        <li>head is missing a closing tag. added a closing tag.</li>
+        <li>Missing meta data, such as character set. added this data to head.</li>
+        <li>h1 missing a closing tag. added a closing tag.</li>
+        <li>paragraph is missing a starting tag. added a starting tag.</li>
+        <li>List has mismatched tags. Starts with ol. ends with /ul. replacing ol with ul or /ul with /ol would work. I replaced /ul with /ol.</li>
+        <li>Paragraph missing a closing tag. added closing tag.</li>
+        <li>image should have alt text. added alt text.</li>
+        <li>anchor tag ends with an image tag. replaced the /img with /a</li>
+        <li>table missing closing tag. added closing tag. added a closing tag</li>
+        <li>within the table one of the rows closing tags is missing a /. Added the backslash</li>
+        <li>in image tag source is written s "source", shoul be "src". Changed to "src"</li>
+        <li>center is no longer supported. removed and replaced them with paragraphs. Inside paragraph tags added: style="text-align: center"</li>
+        <li>Cannot have bgcolor in paragraph tag. But we can fix this by replacing bgcolor="lightgray" with style="color: lightgay"</li>
+        <li>have an unclosed comment. closed it.</li>
+        <li>anchor tag not closed. added an closing tag</li>
+        <li>the paragraph and italicize tags are messed up at end. have &lt/p&gt&lt/em&gt, need to be &lt/em&gt&lt/p&gt. Changed to &lt/em&gt&lt/p&gt</li>
+        <li>dl can not have li elements within it. it is a descriptive tag that needs both &lt dt&gt (title) and &lt dd&gt (description). Replaced first li with dt and second li with dd.</li>
+    </ol>
+
 </body>
 </html>
 
