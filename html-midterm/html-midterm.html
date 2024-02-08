@@ -1,16 +1,26 @@
+<!-- Missing <!DOCTYPE html>. Added to top of page. -->
 <!DOCTYPE html>
+<!-- <html language="en"> does not belong in head tag. Move this to before head but after <!DOCTYPE html>. -->
+<!-- html tag from 2. has language when it should be lang. changed it to lang. -->
 <html lang="en">
+<!-- <head> is missing a closing tag. added a closing tag. -->
 <head>
+    <!-- Missing meta data, character set and viewport. Added these to the head. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error-Filled Page</title>
 </head>
     
 <body>
+    <!-- <h1> missing a closing tag. added a closing tag. -->
     <h1>Welcome to My Error-Filled Page</h1>
     
+    <!-- Paragraph is missing a starting tag. Added a starting tag, <p>. -->
     <p>This is a paragraph with mismatched tags and missing closing tags.</p>
     
+    <!-- List has mismatched tags. Starts with <ol>. ends with </ul>. 
+        Replacing <ol> with <ul> or </ul> with </ol> would both work. 
+        I replaced </ul> with </ol> so it would be an ordered list. -->
     <ol>
         <li>Item 1</li>
         <li>Item 2</li>
@@ -24,12 +34,16 @@
         <li>Item 10</li>
     </ol>
 
+    <!-- Paragraph missing a closing tag. Added closing tag </p>. -->
     <p>This is another paragraph without proper indentation.</p>
     
+    <!-- <image> should have alt text. Added alt text. -->
     <img src="image.jpg" alt="funny image about programming">
 
+    <!-- An anchor tag ends with an image tag. Replaced the </img> with </a>. -->
     <a href="https://www.example.com" target="_blank">Click me!</a>
 
+    <!-- Table is missing closing tag. Added closing tag. -->
     <table>
         <tr>
             <th>Name</th>
@@ -37,6 +51,8 @@
         </tr>
         <tr>
             <td>John</td>
+            <!-- Within the table one of the rows closing tags is missing a /.
+                Added the backslash. ie had <li> but needed to <\li> to close.-->
             <td>25</td>
         </tr>
         <tr>
@@ -45,20 +61,32 @@
         </tr>
     </table>
     
+    <!-- In an image tag source is written as source, it should be src. Changed to src. -->
     <img src="error.jpeg" alt="Error Image">
 
+    <!-- <center> is no longer supported. Removed <center> and replaced them with <p>. 
+        Inside paragraph tags added: style="text-align: center" to center it.-->
     <p style="text-align: center">This is centered text.</p>
 
+    <!-- Cannot have bgcolor in paragraph tag. 
+        But can fix this by replacing bgcolor="lightgray" with style="color: lightgay. "-->
     <p style="color: lightgray">Text</p>
 
     <input type="button" value="Click me">
 
+    <!-- Have an unclosed comment. Closed it. -->
     <!-- This is an unclosed comment -->
 
+    <!-- Anchor tag not closed. Added a closing tag. -->
     <a href="#">Link without closing tag</a>
 
+    <!-- The paragraph and italicize tags are messed up at end. 
+        Have </p></em>, need to be </em></p>. Changed to </em></p>. -->
     <p><em>Underlined text</em></p>
 
+    <!-- <dl> can not have <li> elements within it. 
+        It is a descriptive tag that needs both <dt> (title) and <dd> (description). 
+        Replaced first <li> with <dt> and second <li> with <dd>.-->
     <dl>
         <dt>Descriptive Item Title</dt>
         <dd>Descriptive Item Text</dd>
@@ -68,26 +96,26 @@
     <br><br>
     <p><b>ERRORS FOUND AND FIXED</b></p>
     <ol>
-        <li>Missing <!DOCTYPE html>. Added to top of page.</li>
-        <li>html language="en" on line 5 does not belong in head tag. Put this tag on line 3.</li>
-        <li>html tag from errror 1 has "language" when it should be "lang". changed it to lang.</li>
-        <li>head is missing a closing tag. added a closing tag.</li>
-        <li>Missing meta data, such as character set. added this data to head.</li>
-        <li>h1 missing a closing tag. added a closing tag.</li>
-        <li>paragraph is missing a starting tag. added a starting tag.</li>
-        <li>List has mismatched tags. Starts with ol. ends with /ul. replacing ol with ul or /ul with /ol would work. I replaced /ul with /ol.</li>
-        <li>Paragraph missing a closing tag. added closing tag.</li>
-        <li>image should have alt text. added alt text.</li>
-        <li>anchor tag ends with an image tag. replaced the /img with /a</li>
-        <li>table missing closing tag. added closing tag. added a closing tag</li>
-        <li>within the table one of the rows closing tags is missing a /. Added the backslash</li>
-        <li>in image tag source is written s "source", shoul be "src". Changed to "src"</li>
-        <li>center is no longer supported. removed and replaced them with paragraphs. Inside paragraph tags added: style="text-align: center"</li>
-        <li>Cannot have bgcolor in paragraph tag. But we can fix this by replacing bgcolor="lightgray" with style="color: lightgay"</li>
-        <li>have an unclosed comment. closed it.</li>
-        <li>anchor tag not closed. added an closing tag</li>
-        <li>the paragraph and italicize tags are messed up at end. have &lt/p&gt&lt/em&gt, need to be &lt/em&gt&lt/p&gt. Changed to &lt/em&gt&lt/p&gt</li>
-        <li>dl can not have li elements within it. it is a descriptive tag that needs both &lt dt&gt (title) and &lt dd&gt (description). Replaced first li with dt and second li with dd.</li>
+        <li>Missing &lt !DOCTYPE html&gt. Added to top of page.</li>
+        <li>&lt html language="en"&gt does not belong in head tag. Move this to before head but after &lt !DOCTYPE html&gt.</li>
+        <li>html tag from 2. has language when it should be lang. changed it to lang.</li>
+        <li>&lt head&gt is missing a closing tag. Added a closing tag.</li>
+        <li>Missing meta data, character set and viewport. Added these to the head.</li>
+        <li>&lt h1&gt missing a closing tag. Added a closing tag.</li>
+        <li>Paragraph is missing a starting tag. added a starting tag, &lt p&gt.</li>
+        <li>List has mismatched tags. Starts with &lt ol&gt. ends with &lt/ul&gt. Replacing &lt ol&gt with &lt ul&gt or &lt/ul&gt with &lt/ol&gt would both work. I replaced &lt/ul&gt with &lt/ol&gt so it would be an ordered list.</li>
+        <li>Paragraph missing a closing tag. Added a closing tag, &lt/p&gt.</li>
+        <li>&lt image&gt should have alt text. Added alt text.</li>
+        <li>An anchor tag ends with an image tag. Replaced the &lt/img&gt with &lt/a&gt.</li>
+        <li>Table is missing closing tag. Added closing tag.</li>
+        <li>Within the table one of the rows closing tags is missing a /. Added the backslash. ie had &lt li&gt but needed to &lt\li&gt to close.</li>
+        <li>In an image tag source is written as source, it should be src. Changed to src.</li>
+        <li>&lt center&gt is no longer supported. Removed &lt center&gt and replaced them with &lt p&gt. Inside paragraph tags added: style="text-align: center" to center it.</li>
+        <li>Cannot have bgcolor in paragraph tag. But can fix this by replacing bgcolor="lightgray" with style="color: lightgay".</li>
+        <li>Have an unclosed comment. Closed it.</li>
+        <li>Anchor tag not closed. Added a closing tag.</li>
+        <li>The paragraph and italicize tags are messed up at end. Have &lt/p&gt&lt/em&gt, need to be &lt/em&gt&lt/p&gt. Changed to &lt/em&gt&lt/p&gt.</li>
+        <li>&lt dl&gt can not have &lt li&gt elements within it. It is a descriptive tag that needs both &lt dt&gt (title) and &lt dd&gt (description). Replaced first &lt li&gt with &lt dt&gt and second &lt li&gt with &lt dd&gt.</li>
     </ol>
 
 </body>
