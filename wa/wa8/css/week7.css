@@ -1,0 +1,68 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d6f4ff;
+    font-family: "Arial";
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: #41D9D9;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color: darkblue;
+}
+
+img{
+    width:30vw;
+    height: auto;
+    opacity: 1;
+
+    transition: opacity 2s;
+}
+
+img:hover {
+    opacity: 0;
+}
+
+#red-ball{
+    background-color: #ff80a2;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:0;
+
+    animation-name: ballBounce;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+h1 {
+    color: darkblue;
+}
+
+@keyframes ballBounce{
+    from {
+        margin: 0;
+        background-color: #ff80a2;
+    }
+    50% {
+        margin-left: 10%;
+        margin-top: 0%;
+        background-color: #e0d1ff;
+    }
+    to {
+        margin: 0;
+        background-color: #ff80a2;
+    }
+
+}
