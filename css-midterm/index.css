@@ -45,7 +45,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 580px;
+    height: 100%;
 }
 .concertBox {
     width: 48%;
@@ -81,7 +81,7 @@ h1 {
     display: flex;
     background-color: #ef6eaa;
 }
-.showDescription {
+.showDescription{
     font-size: 16px;
     margin: 0;
     text-indent: 0.5in;
@@ -90,11 +90,11 @@ h1 {
     display: flex;
     width: 100%;
 }
-.infoRowNames {
+.infoRowNames{
     font-size: 18px;
     width: 70%;
 }
-.infoRowTitle {
+.infoRowTitle{
     font-size: 18px;
     font-weight: bold;
     width: 30%;
@@ -122,12 +122,12 @@ h1 {
     text-align: center;
     margin: 0;
 }
-.date p {
+.date p{
     font-size: 24px;
     margin: 0;
     padding: 12px 0 8px 0;
 }
-.dateSmall {
+.dateSmall p{
     font-size: 18px;
     margin: 0;
     padding: 0 0 12px 0;
@@ -165,25 +165,29 @@ h1 {
     .concertGrid {
         display: flex;
         justify-content: center;
-        height: 1040px;
-        margin-top: 40px;
+        height: auto;
+        margin-top: 0px
     }
     .concertRow {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
-        height: 100%;
+        height: auto;
     }
     .concertBox {
         width: 100%;
-        height: 500px;
+        height: auto;
+        margin-top: 40px;
     }
     .concertBoxViewMore {
-        height: 440px;
+        height: auto;
+        transition-duration: 0s;
+        opacity: 1;
+        background-color: rgba(255,255,255,0.9);
     }
     .showDescription {
-        font-size: 12px;
+        font-size: 16px;
         text-indent: 0.25in;
     }
     .infoRowNames {
@@ -200,7 +204,7 @@ h1 {
         background-color: black;
         border-radius: 50%;
     }
-    .date p {
+    .date p{
         font-size: 18px;
         margin: 0;
         padding: 0;
@@ -208,7 +212,7 @@ h1 {
     .date {
         padding: 10px 0 10px 0;
     }
-    .dateSmall {
+    .dateSmall p{
         font-size: 14px;
         margin: 0;
         padding: 0;
@@ -221,7 +225,7 @@ h1 {
         text-align: left;
         margin: 0;
     }
-    
+
 }
 
 
