@@ -38,7 +38,7 @@ h1 {
 .concertGrid {
     display: flex;
     justify-content: center;
-    height: 632px;
+    height: 696px;
     margin-top: 40px;
 }
 .concertRow {
@@ -63,7 +63,7 @@ h1 {
 } 
 .concertBoxViewMore {
     width: 94%;
-    height: 520px;
+    height: 584px;
     font-size: 20px;
     display: flex;
     flex-direction: column;
