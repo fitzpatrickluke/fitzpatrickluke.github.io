@@ -81,7 +81,7 @@ h1 {
     display: flex;
     background-color: #ef6eaa;
 }
-#showDescription {
+.showDescription {
     font-size: 16px;
     margin: 0;
     text-indent: 0.5in;
@@ -90,16 +90,16 @@ h1 {
     display: flex;
     width: 100%;
 }
-#infoRowNames {
+.infoRowNames {
     font-size: 18px;
     width: 70%;
 }
-#infoRowTitle {
+.infoRowTitle {
     font-size: 18px;
     font-weight: bold;
     width: 30%;
 }
-#showName {
+.showName {
     font-size: 24px;
     width: 74%;
     height: 60px;
@@ -127,7 +127,7 @@ h1 {
     margin: 0;
     padding: 12px 0 8px 0;
 }
-#dateSmall {
+.dateSmall {
     font-size: 18px;
     margin: 0;
     padding: 0 0 12px 0;
@@ -182,14 +182,14 @@ h1 {
     .concertBoxViewMore {
         height: 440px;
     }
-    #showDescription {
+    .showDescription {
         font-size: 12px;
         text-indent: 0.25in;
     }
-    #infoRowNames {
+    .infoRowNames {
         font-size: 14px;
     }
-    #infoRowTitle {
+    .infoRowTitle {
         font-size: 14px;
     }
     .dateBox {
@@ -208,12 +208,12 @@ h1 {
     .date {
         padding: 10px 0 10px 0;
     }
-    #dateSmall {
+    .dateSmall {
         font-size: 14px;
         margin: 0;
         padding: 0;
     }
-    #showName {
+    .showName {
         font-size: 18px;
         width: 74%;
         height: 50px;
