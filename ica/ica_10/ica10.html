@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-style: solid;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box" id="box1"> HI </div>
+    <div class="box" id="box2"> HI </div>
+
+    <script>
+        const box = document.getElementById("box1");
+        box.addEventListener("click", clickMe);
+
+        function clickMe() {
+            console.log("clicked");
+            box.textContent =  "LEAVE ME ALONE";
+        }
+
+        const box2 = document.getElementById("box2");
+        box2.addEventListener("click", clickMe2);
+        function clickMe2() {
+            document.getElementById("box2").style.backgroundColor = "red";
+        }
+    </script>
+
+</body>
+</html>
