@@ -1,0 +1,38 @@
+
+body {
+    font-family: "Gill Sans", sans-serif;
+    background-color: rgb(252, 241, 223);
+}
+
+label {
+    font-weight: bold;
+}
+
+div {
+    padding-bottom: 16px;
+}
+
+button {
+    background-color: rgb(255, 255, 204);
+    width: 400px;
+    height: 64px;
+    font-size: 24px;
+}
+
+input[type="text"] {
+    width: 200px;
+}
+
+p {
+    background: #b0eaff;
+    color: darkblue;
+    padding: 10px;
+    visibility: hidden;
+
+    font-size: 24px;
+    width: 400px;
+
+    border-radius: 4%;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
