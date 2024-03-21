@@ -7,7 +7,7 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-let storyText = "It was a hot 94 fahrenheit outside, so :insertx: wanted to go spend time outside. When they got to :inserty:, they knew just what they wanted to do, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
+let storyText = "One day, :insertx: looked at the sky. They believed that the sun weighed 300 pounds and was only 94 fahrenheit hot. :insertx: met up with Bob to go to the :inserty: and they :insertz:.";
 
 const insertX = ["Pikachu", "Paimon", "the goose"];
 

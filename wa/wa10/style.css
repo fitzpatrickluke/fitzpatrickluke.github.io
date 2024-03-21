@@ -1,7 +1,11 @@
 
 body {
     font-family: "Gill Sans", sans-serif;
-    background-color: rgb(252, 241, 223);
+    background: rgb(233, 252, 255);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
@@ -13,10 +17,12 @@ div {
 }
 
 button {
-    background-color: rgb(255, 255, 204);
+    background-color: rgb(204, 255, 217);
     width: 400px;
     height: 64px;
     font-size: 24px;
+    font-weight: bold;
+    color: darkblue;
 }
 
 input[type="text"] {
