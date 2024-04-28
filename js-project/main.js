@@ -13,6 +13,11 @@ let volume_tens = -2;
 let volume_ones = -2;
 let hundred_on = false;
 
+const color_grey = "rgb(249, 251, 242)";
+const color_red = "rgb(255, 94, 91)";
+const color_green = "rgb(169, 255, 203)";
+const mean_emoji = String.fromCodePoint(128520);
+
 let reset_button = document.querySelector("#resetButton");
 reset_button.addEventListener('click', shuffleBoxes);
 
@@ -50,6 +55,7 @@ function shuffleBoxes(){
             curr_box = document.querySelector(volume_id);
             curr_box.addEventListener('click', getLast);
             curr_box.textContent = "";
+            curr_box.style.backgroundColor = color_grey;
         }
     }    
 }
@@ -66,6 +72,8 @@ function getLast(){
         curr_box_2 = document.querySelector(volume_id_2);
         curr_box_1.textContent = "";
         curr_box_2.textContent = "";
+        curr_box_1.style.backgroundColor = color_grey;
+        curr_box_2.style.backgroundColor = color_grey;
         box_1_selected = false;
         box_2_selected = false;
         box_1_selection = -1;
@@ -81,6 +89,8 @@ function getLast(){
         volume_boxes[6*y+x].volume_on = true;
         console.log(box.x, box.y);
         this.textContent = box.volume_level;
+        if(box.volume_level == -1)
+            this.textContent = mean_emoji;
         box_1_selected = true;
         box_1_selection = box;
     }
@@ -88,13 +98,23 @@ function getLast(){
         volume_boxes[6*y+x].volume_on = true;
         console.log(box.x, box.y);
         this.textContent = box.volume_level;
+        if(box.volume_level == -1)
+            this.textContent = mean_emoji;
         box_2_selected = true;
         box_2_selection = box;
         if(box_1_selection.volume_level == box_2_selection.volume_level)
         {
-            if(volume_tens == -2 && box_1_selection.volume_level != 100) {
+            if(volume_tens == -2 && box_1_selection.volume_level != 100
+                && box_1_selection.volume_level != -1) {
                 volume_tens = box_2_selection.volume_level;
                 updateMinusOne();
+
+                const volume_id_1 = "#volume_"+box_1_selection.y+box_1_selection.x;
+                const volume_id_2 = "#volume_"+box_2_selection.y+box_2_selection.x;
+                vol_box_1 = document.querySelector(volume_id_1);
+                vol_box_2 = document.querySelector(volume_id_2);
+                vol_box_1.style.backgroundColor = color_green;
+                vol_box_2.style.backgroundColor = color_green;
             }
             else if(box_1_selection.volume_level == 100) {
                 volume_ones = box_2_selection.volume_level;
@@ -104,6 +124,13 @@ function getLast(){
                 volume_tens = -2;
                 volume_ones = -2;
                 console.log("changeinG!!!");
+
+                const volume_id_1 = "#volume_"+box_1_selection.y+box_1_selection.x;
+                const volume_id_2 = "#volume_"+box_2_selection.y+box_2_selection.x;
+                vol_box_1 = document.querySelector(volume_id_1);
+                vol_box_2 = document.querySelector(volume_id_2);
+                vol_box_1.style.backgroundColor = color_green;
+                vol_box_2.style.backgroundColor = color_green;
             }
             else if(volume_tens != -2 && volume_ones == -2) {
                 volume_ones = box_2_selection.volume_level;
@@ -113,11 +140,34 @@ function getLast(){
                 volume_tens = -2;
                 volume_ones = -2;
                 console.log("changeinG!!!");
+
+                const volume_id_1 = "#volume_"+box_1_selection.y+box_1_selection.x;
+                const volume_id_2 = "#volume_"+box_2_selection.y+box_2_selection.x;
+                vol_box_1 = document.querySelector(volume_id_1);
+                vol_box_2 = document.querySelector(volume_id_2);
+                vol_box_1.style.backgroundColor = color_green;
+                vol_box_2.style.backgroundColor = color_green;
+            }
+            else {
+                const volume_id_1 = "#volume_"+box_1_selection.y+box_1_selection.x;
+                const volume_id_2 = "#volume_"+box_2_selection.y+box_2_selection.x;
+                vol_box_1 = document.querySelector(volume_id_1);
+                vol_box_2 = document.querySelector(volume_id_2);
+                vol_box_1.style.backgroundColor = color_red;
+                vol_box_2.style.backgroundColor = color_red;
             }
             box_1_selected = false;
             box_2_selected = false;
             box_1_selection = -1;
             box_2_selection = -1;
+        }
+        else {
+            const volume_id_1 = "#volume_"+box_1_selection.y+box_1_selection.x;
+            const volume_id_2 = "#volume_"+box_2_selection.y+box_2_selection.x;
+            vol_box_1 = document.querySelector(volume_id_1);
+            vol_box_2 = document.querySelector(volume_id_2);
+            vol_box_1.style.backgroundColor = color_red;
+            vol_box_2.style.backgroundColor = color_red;
         }
     }
 }
@@ -136,6 +186,7 @@ function updateMinusOne(){
         }
     }    
 }
+
 
 shuffleBoxes();
 

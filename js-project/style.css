@@ -1,10 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(14,28,54);
+    background: linear-gradient(324deg, rgba(14,28,54,1) 0%, rgba(40,51,73,1) 63%, rgba(20,19,67,1) 100%);
+    background-attachment: fixed;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    margin-top: 80px;
+}
+
 .volumeBox {
     width: 60px;
     height: 60px;
     margin: 10px;
+    font-size: 24px;
 }
+
 
 .volumeRow {
     display: flex;
     flex-direction: row;
 }
+
+#currVolume {
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
+    width: 120px;
+    height: 32px;
+    background-color: lightgray;
+    border-style: none;
+    border-radius: 4px;
+    color: black;
+}
+
+button:hover {
+    background-color: grey;
+}
+
