@@ -16,20 +16,33 @@ body {
     height: 60px;
     margin: 10px;
     perspective: 1000px;
+    
 }
 
 .boxInner {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: absolute;
   }
 
 .volumeBox .boxInner.flip {
     transform: rotateY(180deg);
+}
+
+/* .volumeBox .boxInner.shuffle {
+    animation-name: changeOpacity;
+    animation-duration: 2s;
+} */
+
+@keyframes changeOpacity {
+    0%   {opacity: 1;}
+    50%   {opacity: 0;}
+    100%   {opacity: 1;}
 }
 
 .boxFront, .boxBack {
@@ -94,3 +107,217 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
+#volume_01.shuffle{
+    animation-name: va_01;
+    animation-duration: 2s;
+}
+#volume_02.shuffle{
+    animation-name: va_02;
+    animation-duration: 2s;
+}
+#volume_03.shuffle{
+    animation-name: va_03;
+    animation-duration: 2s;
+}
+#volume_04.shuffle{
+    animation-name: va_04;
+    animation-duration: 2s;
+}
+#volume_05.shuffle{
+    animation-name: va_05;
+    animation-duration: 2s;
+}
+#volume_10.shuffle{
+    animation-name: va_10;
+    animation-duration: 2s;
+}
+#volume_11.shuffle{
+    animation-name: va_11;
+    animation-duration: 2s;
+}
+#volume_12.shuffle{
+    animation-name: va_12;
+    animation-duration: 2s;
+}
+#volume_13.shuffle{
+    animation-name: va_13;
+    animation-duration: 2s;
+}
+#volume_14.shuffle{
+    animation-name: va_14;
+    animation-duration: 2s;
+}
+#volume_15.shuffle{
+    animation-name: va_15;
+    animation-duration: 2s;
+}
+#volume_20.shuffle{
+    animation-name: va_20;
+    animation-duration: 2s;
+}
+#volume_21.shuffle{
+    animation-name: va_21;
+    animation-duration: 2s;
+}
+#volume_22.shuffle{
+    animation-name: va_22;
+    animation-duration: 2s;
+}
+#volume_23.shuffle{
+    animation-name: va_23;
+    animation-duration: 2s;
+}
+#volume_24.shuffle{
+    animation-name: va_24;
+    animation-duration: 2s;
+}
+#volume_25.shuffle{
+    animation-name: va_25;
+    animation-duration: 2s;
+}
+#volume_30.shuffle{
+    animation-name: va_30;
+    animation-duration: 2s;
+}
+#volume_31.shuffle{
+    animation-name: va_31;
+    animation-duration: 2s;
+}
+#volume_32.shuffle{
+    animation-name: va_32;
+    animation-duration: 2s;
+}
+#volume_33.shuffle{
+    animation-name: va_33;
+    animation-duration: 2s;
+}
+#volume_34.shuffle{
+    animation-name: va_34;
+    animation-duration: 2s;
+}
+#volume_35.shuffle{
+    animation-name: va_35;
+    animation-duration: 2s;
+}
+
+/* I know there are probably better ways to do this, but what works works */
+@keyframes va_01 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-80px; top:0px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_02 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-160px; top:0px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_03 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-240px; top:0px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_04 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-320px; top:0px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_05 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-400px; top:0px;}
+    100% {left:0px; top:0px;}
+  }
+
+@keyframes va_10 {
+    0%   {left:0px; top:0px;}
+    50%  {left:0px; top:-80px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_11 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-80px; top:-80px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_12 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-160px; top:-80px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_13 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-240px; top:-80px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_14 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-320px; top:-80px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_15 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-400px; top:-80px;}
+    100% {left:0px; top:0px;}
+  }
+
+@keyframes va_20 {
+    0%   {left:0px; top:0px;}
+    50%  {left:0px; top:-160px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_21 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-80px; top:-160px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_22 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-160px; top:-160px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_23 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-240px; top:-160px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_24 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-320px; top:-160px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_25 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-400px; top:-160px;}
+    100% {left:0px; top:0px;}
+  }
+
+
+@keyframes va_30 {
+    0%   {left:0px; top:0px;}
+    50%  {left:0px; top:-240px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_31 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-80px; top:-240px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_32 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-160px; top:-240px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_33 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-240px; top:-240px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_34 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-320px; top:-240px;}
+    100% {left:0px; top:0px;}
+  }
+@keyframes va_35 {
+    0%   {left:0px; top:0px;}
+    50%  {left:-400px; top:-240px;}
+    100% {left:0px; top:0px;}
+  }
