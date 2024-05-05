@@ -299,7 +299,7 @@ let musicMain;
 let begin_button = document.querySelector("#beginButton");
 begin_button.addEventListener('click', function () {
     console.log("YASS")
-    musicMain = new Audio("lofi.mp3");
+    musicMain = new Audio("music.mp3");
     musicMain.muted = false;
     musicMain.volume = 0.5;
     musicMain.addEventListener('ended', function() {
