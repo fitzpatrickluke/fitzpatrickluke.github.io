@@ -1,3 +1,7 @@
+.game {
+    display: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -34,14 +38,28 @@ body {
     transform: rotateY(180deg);
 }
 
+
+#beginButton.animate {
+    animation-name: changeOpacity_1;
+    animation-duration: 1s;
+}
+.game.animate {
+    animation-name: changeOpacity_2;
+    animation-duration: 2s;
+}
+
 /* .volumeBox .boxInner.shuffle {
     animation-name: changeOpacity;
     animation-duration: 2s;
 } */
 
-@keyframes changeOpacity {
+@keyframes changeOpacity_1 {
     0%   {opacity: 1;}
-    50%   {opacity: 0;}
+    100%   {opacity: 0;}
+}
+@keyframes changeOpacity_2 {
+    0% {display: none; opacity: 0;}
+    50% {display: inline; opacity: 0;}
     100%   {opacity: 1;}
 }
 
@@ -62,12 +80,12 @@ body {
 }
 
 .boxFront {
-    background-color: black;
+    background-color: rgb(151, 176, 236);
 }
 
 .boxBack {
     transform: rotateY(180deg);
-    background-color: lightgray;
+    background-color: white;
 }
 
 .volumeRow {

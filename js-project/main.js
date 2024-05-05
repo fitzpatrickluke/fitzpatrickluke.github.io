@@ -3,7 +3,7 @@ const volume_levels = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,100,100,-1,-1];
 let volume_boxes = [];
 let volume_id = "";
 let update_volume_id = "";
-let currentVolume = 0;
+let currentVolume = 50;
 
 let box_1_selected = false;
 let box_2_selected = false;
@@ -14,13 +14,13 @@ let volume_tens = -2;
 let volume_ones = -2;
 let hundred_on = false;
 
-const color_grey = "rgb(249, 251, 242)";
+const color_grey = "lightgrey";
 const color_red = "rgb(255, 94, 91)";
 const color_green = "rgb(169, 255, 203)";
 const mean_emoji = String.fromCodePoint(128520);
 const shuffleWaitTime = 400;
 
-let canClick = true;
+let canClick = false;
 
 let reset_button = document.querySelector("#resetButton");
 reset_button.addEventListener('click', function () {
@@ -34,7 +34,7 @@ reset_button.addEventListener('click', function () {
 
 
 let currentVolumeText = document.querySelector("#currVolume");
-currentVolumeText.textContent = "Volume: 00";
+currentVolumeText.textContent = "Volume: 50";
 
 
 class VolumeBox {
@@ -68,7 +68,7 @@ function shuffleBoxes(onLoad){
     box_1_selection = -1;
     box_2_selection = -1;
     currentVolume = 0;
-    currentVolumeText.textContent = "Volume: 00";
+    //currentVolumeText.textContent = "Volume: 50";
     volume_boxes = [];
 
     const shuffled_levels = volume_levels.sort((a, b) => 0.5 - Math.random());
@@ -82,7 +82,7 @@ function shuffleBoxes(onLoad){
             // if(curr_box.classList.contains("flip"))
             //     curr_box.classList.toggle("flip");
             curr_box_back = document.querySelector(volume_id + " .boxBack");
-            curr_box_back.style.backgroundColor = "lightgrey";
+            curr_box_back.style.backgroundColor = color_grey;
             curr_box_back.textContent = shuffled_levels[6*y+x];
             if(shuffled_levels[6*y+x] == -1)
                 curr_box_back.textContent = mean_emoji;
@@ -113,8 +113,8 @@ function resetNonMatching() {
     const volume_back_id_2 = "#volume_"+box_2_selection.y+box_2_selection.x + " .boxBack";
     curr_box_back_1 = document.querySelector(volume_back_id_1);
     curr_box_back_2 = document.querySelector(volume_back_id_2);
-    setTimeout(function () {curr_box_back_1.style.backgroundColor = "lightgrey"}, 600);
-    setTimeout(function () {curr_box_back_2.style.backgroundColor = "lightgrey"}, 600);
+    setTimeout(function () {curr_box_back_1.style.backgroundColor = color_grey}, 600);
+    setTimeout(function () {curr_box_back_2.style.backgroundColor = color_grey}, 600);
     box_1_selected = false;
     box_2_selected = false;
     box_1_selection = -1;
@@ -124,7 +124,9 @@ function resetNonMatching() {
 
 function updateCards(vol_id){
     if(canClick == false) return;
-
+    let sound = new Audio("flip.mp3");
+    sound.muted = false;
+    sound.play();
     // get the seleced box
     const curr_box = document.querySelector("#"+vol_id)
     const len = vol_id.length;
@@ -169,6 +171,7 @@ function updateCards(vol_id){
                 vol_box_2 = document.querySelector(volume_id_2);
                 vol_box_1.style.backgroundColor = color_green;
                 vol_box_2.style.backgroundColor = color_green;
+                
             }
             // Matched 100
             else if(box_1_selection.volume_level == 100) {
@@ -177,6 +180,7 @@ function updateCards(vol_id){
                 double_selected = 0;
                 currentVolumeText = document.querySelector("#currVolume");
                 currentVolumeText.textContent = "Volume: 100";
+                musicMain.volume = 1;
                 volume_tens = -2;
                 volume_ones = -2;
                 console.log("changeinG!!!");
@@ -195,6 +199,8 @@ function updateCards(vol_id){
                 double_selected = 0;
                 currentVolumeText = document.querySelector("#currVolume");
                 currentVolumeText.textContent = "Volume: " + volume_tens + volume_ones;
+                let audioSound = volume_tens*10 + volume_ones;
+                musicMain.volume = audioSound/100;
                 volume_tens = -2;
                 volume_ones = -2;
                 console.log("changeinG!!!");
@@ -205,6 +211,8 @@ function updateCards(vol_id){
                 vol_box_2 = document.querySelector(volume_id_2);
                 vol_box_1.style.backgroundColor = color_green;
                 vol_box_2.style.backgroundColor = color_green;
+
+   
             }
             // Matched -1 evil reset
             else {
@@ -256,6 +264,9 @@ function flipAllBoxes() {
 
 var id = null;
 function animateShuffle() {
+    let sound = new Audio("shuffle.mp3");
+    sound.muted = false;
+    sound.play();
     console.log("ANIMATING SHUFFLE");
     for(let y = 0; y < 4; y+=1) {
         for(let x = 0; x < 6; x+=1) {
@@ -275,13 +286,39 @@ function updateMinusOne(){
                 const volumeBox = new VolumeBox(x, y, volume_tens, volume_id);
                 volume_boxes[6*y+x] = volumeBox;
                 curr_box_back = document.querySelector(volume_id + " .boxBack");
-                curr_box_back.style.backgroundColor = "lightgrey";
+                curr_box_back.style.backgroundColor = color_grey;
                 curr_box_back.textContent = volume_tens;
                 
             }
         }
     }    
 }
+
+
+let musicMain;
+let begin_button = document.querySelector("#beginButton");
+begin_button.addEventListener('click', function () {
+    console.log("YASS")
+    musicMain = new Audio("lofi.mp3");
+    musicMain.muted = false;
+    musicMain.volume = 0.5;
+    musicMain.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    musicMain.play();
+    let game = document.querySelector(".game")
+    // game.style.display = "inline";
+    // this.style.display = "none";
+
+    begin_button.classList.toggle("animate");
+    //game.classList.toggle("animate");
+    setTimeout(function () {
+        canClick = true;
+        begin_button.style.display = "none";
+        game.style.display = "inline";
+    }, 900);
+});
 
 
 shuffleBoxes(true);
